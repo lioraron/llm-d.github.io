@@ -8,6 +8,7 @@ authors:
   - lioraronovich
   - raymondzhao
   - jooyeonmok
+  - kahilam
   - niliguy
 
 tags: [blog, batch-inference, inference, llm-d]
@@ -32,7 +33,7 @@ When batch and interactive inference workloads compete for the same GPU resource
 - **Dedicating separate GPU pools for batch workloads** is expensive and wasteful.
 - **Manually throttling batch workloads** is operationally burdensome.
 
-Batch Gateway is designed to solve this through built-in adaptive concurrency control and integration with llm-d's routing and scheduling components. Together, these mechanisms dynamically adjust batch flow based on available capacity, protect interactive traffic under load, and prioritize jobs based on SLO targets. The result is that batch jobs make steady progress toward their completion targets without interfering with interactive traffic.
+Batch Gateway supports several ways to manage how batch requests reach inference. Synchronous dispatch can use adaptive concurrency, together with llm-d Router admission control or priority-based flow control. Asynchronous dispatch can use downstream inference metrics to regulate when queued batch requests are forwarded. When configured for a deployment, these controls help limit competition with interactive requests while batch jobs make steady progress toward their completion targets. Router policies can also prioritize interactive requests and order batch requests by their remaining available time for completion.
 
 Batch Gateway is production-grade, designed for shared multi-tenant environments where security, reliability, observability, and SLO compliance are essential.
 
@@ -56,21 +57,34 @@ Batch Gateway uses pluggable storage backends for different functions. Each func
 
 | Function | Available plug-ins |
 |----------|-------------------|
-| Jobs and files metadata storage | PostgreSQL (for production), Redis, Valkey |
-| Priority queue for jobs | Redis, Valkey |
-| Event channels | Redis, Valkey |
-| Jobs status updates | Redis, Valkey |
-| File storage for input and output files | S3, Filesystem |
+| Job and file metadata, job queue, events, and status | PostgreSQL |
+| Async request and result queues (optional; async mode only) | Redis/Valkey |
+| Input and output files | S3 or filesystem storage |
 
 Expired batch jobs and their associated files are periodically cleaned up.
 
 ### Batch Processor
 
-The batch processor pulls jobs from a priority queue, retrieves the input files, builds execution plans, and dispatches individual inference requests concurrently for downstream processing. As inference results come back, the processor writes them to an output file, and continuously updates the job's status.
+The batch processor pulls jobs from a priority queue, retrieves the input files, and builds per-model execution plans. Depending on the deployment, it sends inference requests directly to the configured gateway or uses an asynchronous dispatcher and collects the returned results. The processor bounds concurrent work; synchronous dispatch can adapt its concurrency to downstream capacity signals. As results arrive, the processor writes them to an output file and updates the job's status.
 
-The processor sorts requests by system-prompt hash so that identical-prefix requests hit the inference engine contiguously, keeping cached prefix blocks hot and avoiding eviction-triggered prefill reconstruction. Combined with llm-d's prefix-cache-aware routing, cache reuse extends across the entire serving pool.
+The processor groups requests by model and orders requests with the same system prompt close together. This can improve prefix-cache reuse. When llm-d Router is configured for prefix-aware routing, matching requests can also benefit from cached prefixes across the serving pool.
 
 The processor listens for job events such as cancellation, enabling real-time control over in-flight work. In addition, the system handles recovery from crashes and failures during processing.
+
+## Benchmark results
+
+The r=2 comparison uses four scenarios: S0 is the interactive-only baseline; S1 sends a continuously backlogged, batch-equivalent workload as ordinary inference requests; S3 uses synchronous dispatch with router admission control and adaptive concurrency; and S4 adds router priority flow control to synchronous dispatch. The table reports p50 interactive TTFT and inter-token latency (ITL), which summarize typical request behavior, and the completion time for each tracked Batch API job against its deadline. S0 and S1 do not submit Batch API jobs.
+
+| Scenario | Interactive TTFT (p50) | Interactive ITL (p50) | Batch jobs completed |
+|---|---:|---:|---|
+| S0 — Interactive only | 60 ms | 16.9 ms | N/A |
+| S1 — Uncontrolled batch-equivalent traffic | 232 ms | 85 ms | N/A — ordinary inference requests |
+| S3 — Admission control + adaptive concurrency | 113 ms | 38 ms | A: ✓ 13.4m/30m, B: ✓ 13.4m/2h, C: ✓ 13.4m/24h |
+| S4 — Priority flow control + adaptive concurrency | 89 ms | 29 ms | A: ✓ 18.3m/30m, B: ✓ 18.5m/2h, C: ✓ 18.5m/24h |
+
+In the comparison, uncontrolled batch-equivalent traffic raised median TTFT from 60 ms to 232 ms and median ITL from 16.9 ms to 85 ms. S3 and S4 reduced that impact, with S4 closer to the interactive-only baseline in these p50 measurements. Follow-up 10-cycle runs completed all 3,000 requests in the S3 and S4 batch jobs within their respective deadlines. See the [benchmark issue](https://github.com/llm-d/llm-d-batch-gateway/issues/491) for the detailed runs and methodology.
+
+The runs used two NVIDIA A100 80 GB GPUs, one per vLLM replica (TP=1), serving `openai/gpt-oss-120b` in MXFP4 with vLLM v0.23.0. Interactive traffic used 512 input and 128 output tokens, with 28 requests per second during 90-second burst phases and 1 request per second during 90-second idle phases. Each tracked batch job contained 1,000 requests with 512 input tokens and a lognormal output-length distribution (mean 500, standard deviation 400, capped at 2,048 tokens); the job deadlines were 30 minutes, 2 hours, and 24 hours.
 
 ## Getting started
 
@@ -88,6 +102,6 @@ Batch Gateway is developed in the open as part of the llm-d ecosystem. If you're
 * **Explore the code** -- Browse the [Batch Gateway repo](https://github.com/llm-d/llm-d-batch-gateway) and the wider [llm-d organization](https://github.com/llm-d)
 * **Join our Slack** -- [Get your invite](/slack) and connect with maintainers and contributors
 * **Attend community calls** -- All meetings are open! Add our [public calendar](https://red.ht/llm-d-public-calendar) and join the conversation
-* **Follow project updates** -- Stay current on [Twitter/X](https://twitter.com/_llm_d_), [Bluesky](https://bsky.app/profile/llm-d.ai), and [LinkedIn](https://www.linkedin.com/company/llm-d)
+* **Follow project updates** -- Stay current on [X (Twitter)](https://x.com/_llm_d_), [Bluesky](https://bsky.app/profile/llm-d.ai), and [LinkedIn](https://www.linkedin.com/company/llm-d)
 * **Watch demos and recordings** -- Subscribe to the [llm-d YouTube channel](https://www.youtube.com/@llm-d-project) for community call recordings and feature walkthroughs
 * **Read the docs** -- Visit our [community page](/community) to find SIGs, contribution guides, and upcoming events

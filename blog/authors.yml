@@ -253,6 +253,13 @@ jooyeonmok:
   socials:
     github: https://github.com/j-mok-dev
 
+kahilam:
+  name: Kahila Mokhtari Jadid
+  title: Senior Machine Learning Engineer, Red Hat
+  image_url: /img/blogs/kahilam.webp
+  socials:
+    github: https://github.com/kahilam
+
 llm-d-maintainers:
   name: llm-d maintainers
   url: https://github.com/llm-d/llm-d/blob/main/MAINTAINERS.md
