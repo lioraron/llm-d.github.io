@@ -48,10 +48,12 @@ cnuland:
 
 niliguy:
   name: Nili Guy
-  title: R&D Manager, AI Infrastructure, IBM
+  title: Senior Technical Staff Member, IBM Research
+  url: https://github.com/nilig
   image_url: /img/blogs/niliguy.webp
   socials:
     linkedin: nilig
+    github: nilig
 
 etailevran:
   name: Etai Lev Ran
@@ -104,10 +106,30 @@ orozeri:
 
 tylersmith:
   name: Tyler Smith
-  title: Member of Technical Staff, Red Hat
+  title: Chief Architect, Inference Engineering, Red Hat
+  url: https://github.com/tlrmchlsmth
   image_url: /img/blogs/tylersmith.webp
   socials:
     linkedin: tyler-michael-smith-017b28102
+    github: https://github.com/tlrmchlsmth
+
+yuchenfama:
+  name: Yuchen Fama
+  title: Senior Principal Product Manager, Inference, Red Hat
+  url: https://github.com/cemigo114
+  image_url: /img/blogs/yuchenfama.jpeg
+  socials:
+    linkedin: yuchen-fama
+    github: https://github.com/cemigo114
+
+elvircrncevic:
+  name: Elvir Crncevic
+  title: Machine Learning Engineer (vLLM), Red Hat
+  url: https://github.com/elvircrn
+  image_url: /img/blogs/elvircrncevic.jpeg
+  socials:
+    linkedin: elvir-crncevic-99a17960
+    github: https://github.com/elvircrn
 
 kellenswain:
   name: Kellen Swain
@@ -186,6 +208,18 @@ kaushikmitra:
   url: https://github.com/kaushikmitr
   image_url: https://avatars.githubusercontent.com/u/157416163?v=4
 
+chenghsiangchiu:
+  name: Cheng-Hsiang Chiu
+  title: Software Engineer, Google
+  url: https://github.com/cheng-hsiang-chiu
+  image_url: https://avatars.githubusercontent.com/u/58955345?v=4
+
+brentstephens:
+  name: Brent Stephens
+  title: Software Engineer, Google
+  url: https://github.com/brent-srg
+  image_url: https://avatars.githubusercontent.com/u/125617878?v=4
+
 benjaminbraun:
   name: Benjamin Braun
   title: Software Engineer, Google
@@ -224,3 +258,488 @@ llm-d-maintainers:
   url: https://github.com/llm-d/llm-d/blob/main/MAINTAINERS.md
   image_url: /img/authors/llm-d-maintainers.png
 
+praveinkannan:
+  name: Pravein Govindan Kannan
+  title: Staff Research Scientist, IBM
+  email: pravein.govindan.kannan@ibm.com
+  image_url: https://avatars.githubusercontent.com/u/9940568?v=4
+  socials:
+    linkedin: praveingk
+    github: https://github.com/praveingk
+    twitter: praveingk
+
+praveenjayachandran:
+  name: Praveen Jayachandran
+  title: Senior Technical Staff Member, IBM
+  email: praveen.j@in.ibm.com
+  image_url: /img/blogs/praveenjayachandran.webp
+  socials:
+    linkedin: praveen-jayachandran-97831113a
+
+jaikhari:
+  name: Jaikrishnan Hari
+  title: Research Partnerships & BD Executive, IBM
+  email: jaikhari@in.ibm.com
+  image_url: /img/blogs/jaikhari.webp
+  socials:
+    linkedin: jaikrishnan-hari-a137972
+
+varunraste:
+  name: Varun Raste
+  title: Solution Architect, IBM
+  email: varun.raste@ibm.com
+  image_url: /img/blogs/varunraste.webp
+  socials:
+    linkedin: varun-raste-0783b3184
+
+prasadmukhedkar:
+  name: Prasad Mukhedkar
+  title: Associate Principal AI Architect, Red Hat
+  email: pmukhedk@redhat.com
+  image_url: /img/blogs/prasadmukhedkar.webp
+  socials:
+    linkedin: prasadmukhedkar1
+
+vinodpathangay:
+  name: Vinod Pathangay
+  title: Chief Architect, Field CTO Organization, Red Hat
+  email: vpathang@redhat.com
+  image_url: /img/blogs/vinodpathangay.webp
+  socials:
+    linkedin: vinod-pathangay
+
+jayanthreddy:
+  name: Jayanth Babu Reddy
+  title: Principal Architect, NxtGen Cloud Technologies
+  email: jayanth.reddy@nxtgen.ai
+  image_url: /img/blogs/jayanthreddy.webp
+  socials:
+    linkedin: jayanth-babu-reddy-498bb0207
+
+abhisyant:
+  name: Abhisyant Anasapurapu
+  title: VP, NxtGen Cloud Technologies
+  email: abhisyant@nxtgen.ai
+  image_url: /img/blogs/abhisyant.webp
+  socials:
+    linkedin: abhisyant
+
+bogdan:
+  name: Bogdan Berce
+  title: Software Engineer, Google
+  image_url: https://github.com/BogdanBe.png
+
+aishu:
+  name: Aishu Kamal
+  title: Staff Software Engineer, Google
+  image_url: https://github.com/aishukamal.png
+  socials:
+    linkedin: https://www.linkedin.com/in/aishwaryakamal
+    github: https://github.com/aishukamal
+
+dolev:
+  name: Dolev Ish Am
+  title: Software Engineering Manager, Google
+  image_url: https://github.com/ishamdo.png
+  socials:
+    linkedin: https://www.linkedin.com/in/dolev-ish-am-b41a8917/
+
+poonamlamba:
+  name: Poonam Lamba
+  title: Senior Product Manager, Google
+  email: poonaml@google.com
+  image_url: https://avatars.githubusercontent.com/u/5097648?v=4
+  socials:
+    linkedin: https://www.linkedin.com/in/poonamlamba/
+maroonayoub-redhat:
+  name: Maroon Ayoub
+  title: Senior Principal Machine Learning Engineer, Red Hat
+  url: https://github.com/vMaroon
+  image_url: /img/blogs/maroonayoub.webp
+  socials:
+    linkedin: v-maroon
+    github: https://github.com/vMaroon
+
+liranschour:
+  name: Liran Schour
+  title: Senior Research Scientist, IBM Research
+  email: liran.schour@gmail.com
+  image_url: https://ca.slack-edge.com/E27SFGS2W-W53PQF1QW-17929f20fdfc-512
+  socials:
+    linkedin: liran-schour-9a8a1027
+    github: liranschour
+
+aslom:
+  name: Aleksander Slominski
+  title: Senior Research Scientist, IBM Research
+  email: aslom@us.ibm.com
+  image_url: https://ca.slack-edge.com/E27SFGS2W-W49HTNVGR-1b0885c27e95-512
+  socials:
+    linkedin: aslom
+    github: aslom
+
+rajjoshi:
+  name: Raj Joshi
+  title: Senior Machine Learning Engineer, Red Hat
+  email: rajjoshi@redhat.com
+  url: https://github.com/rajkiranjoshi
+  image_url: https://ca.slack-edge.com/E030G10V24F-U09NVNF8JP7-cfbc57010dc3-512
+  socials:
+    linkedin: rajkiranjoshi
+    github: rajkiranjoshi
+
+nicklucche:
+  name: Nicolò Lucchesi
+  title: Senior Machine Learning Engineer, Red Hat
+  email: nicklucche@redhat.com
+  image_url: /img/blogs/nicklucche.webp
+  socials:
+    linkedin: nicklucche
+    github: nicklucche
+
+moeinkh:
+  name: Moein Khazraee
+  title: Senior Architect, NVIDIA
+  email: moein@nvidia.com
+  image_url: /img/blogs/moeinkh.webp
+  socials:
+    linkedin: mkhazraee
+    github: mkhazraee
+
+omrik:
+  name: Omri Kahalon
+  title: Senior Manager, NVIDIA
+  email: omrik@nvidia.com
+  image_url: /img/blogs/omrik.webp
+  socials:
+    linkedin: omri-kahalon-b4a025a9
+
+merttoslali:
+  name: Mert Toslali
+  title: Research Scientist, IBM
+  email: toslali@ibm.com
+  image_url: https://github.com/mtoslalibu.png
+  socials:
+    github: https://github.com/mtoslalibu
+
+dipanwitaguhathakurta:
+  name: Dipanwita Guhathakurta
+  title: Software Engineer, IBM
+  email: dipanwita.guhathakurta3@ibm.com
+  image_url: https://github.com/susiejojo.png
+  socials:
+    github: https://github.com/susiejojo
+
+srinivasanparthasarathy:
+  name: Srinivasan Parthasarathy
+  title: Principal Research Scientist, IBM
+  email: spartha@us.ibm.com
+  image_url: https://github.com/sriumcp.png
+  socials:
+    github: https://github.com/sriumcp
+
+jingchen:
+  name: Jing Chen
+  title: Software Engineer, IBM
+  email: Jing.Chen2@ibm.com
+  image_url: https://github.com/jgchn.png
+  socials:
+    github: https://github.com/jgchn
+
+nickmasluk:
+  name: Nick Masluk
+  title: Research Scientist, IBM
+  email: namasluk@us.ibm.com
+  image_url: https://github.com/namasl.png
+  socials:
+    github: https://github.com/namasl
+
+vishakharamani:
+  name: Vishakha Ramani
+  title: Research Scientist, IBM
+  email: vishakharamani@ibm.com
+  image_url: https://github.com/vishakha-ramani.png
+  socials:
+    github: https://github.com/vishakha-ramani
+
+michaelkalantar:
+  name: Michael Kalantar
+  title: Software Engineer, IBM
+  email: kalantar@us.ibm.com
+  image_url: https://github.com/kalantar.png
+  socials:
+    github: https://github.com/kalantar
+
+assertantawi:
+  name: Asser Tantawi
+  title: Research Scientist, IBM
+  email: tantawi@us.ibm.com
+  image_url: https://github.com/atantawi.png
+  socials:
+    github: https://github.com/atantawi
+
+fabiooliveira:
+  name: Fabio Oliveira
+  title: Senior Research Manager, IBM
+  email: fabolive@us.ibm.com
+  image_url: https://github.com/fabolive.png
+  socials:
+    github: https://github.com/fabolive
+
+carloscosta:
+  name: Carlos Costa
+  title: Distinguished Engineer, IBM
+  email: chcost@us.ibm.com
+  url: https://github.com/chcost
+  image_url: https://github.com/chcost.png
+  socials:
+    linkedin: carlos-costa-9b9b1a1
+    github: https://github.com/chcost
+
+itayetelis:
+  name: Itay Etelis
+  title: Research Staff Member, IBM
+  image_url: /img/blogs/itayetelis.webp
+  socials:
+    linkedin: itay-etelis-1692ba157
+
+rachelbrill:
+  name: Rachel Brill
+  title: Senior Technical Staff Member, IBM
+  image_url: /img/blogs/rachelbrill.webp
+  socials:
+    linkedin: rachel-tzoref-brill-6645a11
+
+dolevadas:
+  name: Dolev Adas
+  title: Research Staff Member, IBM  
+  image_url: /img/blogs/dolevadas.webp
+  socials:
+    linkedin: dolev-felman-adas-7a4a0565
+
+oshritfeder:
+  name: Oshrit Feder
+  title: Research Staff Member, IBM
+  image_url: /img/blogs/oshritfeder.webp
+  socials:
+    linkedin: oshrit-feder-7171b42  
+
+sharonkeidarbarner:
+  name: Sharon Keider-Barner
+  title: Manager, AI Inferencing Optimizations 
+  image_url: /img/blogs/sharonkeidarbarner.webp
+  socials:
+    linkedin: sharon-keidar-barner-0884181
+
+ezrasilvera:
+  name: Ezra Silvera
+  title: Senior Technical Staff Member, IBM
+  image_url: /img/blogs/ezrasilvera.webp
+  email: ezra@il.ibm.com
+  socials:
+    github: https://github.com/ezrasilvera
+    linkedin: ezra-silvera-9746682
+
+xiaojunzhang:
+  name: Xiaojun(Robin) Zhang
+  title: AI Software Solutions Engineer, Intel
+  image_url: /img/blogs/xiaojunzhang.webp
+  socials:
+    linkedin: zhangxiaojunhust
+    github: https://github.com/xiaojun-zhang
+
+weifengyao:
+  name: Weifeng(Matrix) Yao
+  title: AI Principal Engineer, Intel
+  image_url: /img/blogs/weifengyao.webp
+  socials:
+    linkedin: weifeng-yao-040b0322
+    github: https://github.com/yao-matrix
+
+fanzhao:
+  name: Fan Zhao
+  title: Senior Engineering Director, Intel
+  image_url: /img/blogs/fanzhao.webp
+  socials:
+    linkedin: fan-zhao-a1560a20
+
+yuanwu:
+  name: Yuan Wu
+  title: AI Frameworks Engineer, Intel
+  image_url: https://github.com/yuanwu2017.png
+  socials:
+    github: https://github.com/yuanwu2017
+
+jianangu:
+  name: Jianan Gu
+  title: AI Frameworks Engineer, Intel
+  image_url: /img/blogs/jianangu.webp
+  socials:
+    github: https://github.com/jianan-gu
+
+alexnails:
+  name: Alex Nails
+  title: Member of Technical Staff, RadixArk
+  image_url: /img/blogs/alexnails.webp
+  socials:
+    linkedin: alex-nails
+    github: https://github.com/alexnails
+
+yangligt2:
+  name: Yang Li
+  title: Software Engineer, Google
+  url: https://github.com/yangligt2
+  image_url: https://avatars.githubusercontent.com/u/210760644?v=4
+  email: yangligt@google.com
+  socials:
+    github: https://github.com/yangligt2
+
+ashokchandrasekar:
+  name: Ashok Chandrasekar
+  title: Staff Software Engineer, Google
+  image_url: /img/blogs/ashokchandrasekar.webp
+  socials:
+    linkedin: ashokchandrasekar
+    github: https://github.com/achandrasekar
+    
+gyliu513:
+  name: Guangya Liu
+  title: Executive Director, JPMorgan Chase
+  email: gyliu513@gmail.com
+  image_url: https://avatars.githubusercontent.com/u/4461983?v=4
+  socials:
+    github: https://github.com/gyliu513
+    website: https://gyliu513.github.io/
+
+prateekkumar:
+  name: Prateek Kumar
+  title: Senior Member Technical Staff, AMD AI Group
+  image_url: https://avatars.githubusercontent.com/u/85689959?v=4
+  socials:
+    linkedin: prateek1709
+    github: https://github.com/PrateekKumar1709
+
+xiyue:
+  name: Xiyue Yu
+  title: Software Engineer, Google
+  url: https://github.com/capri-xiyue
+  image_url: https://avatars.githubusercontent.com/u/52932582?v=4
+  socials:
+    linkedin: xiyue-yu-765200100
+
+alexey:
+  name: Alexey Roytman
+  title: Senior Technical Staff Member, IBM
+  url: https://github.com/roytman
+  image_url: https://avatars.githubusercontent.com/u/1816654?v=4
+
+rahul:
+  name: Rahul Gurnani
+  title: Software Engineer, Google
+  url: https://github.com/rahulgurnani
+  image_url: https://avatars.githubusercontent.com/u/6068038?v=4
+
+guygir:
+  name: Guy Girmonsky
+  title: AI Platforms Research Engineer , IBM
+  url: https://github.com/guygir
+  image_url: https://avatars.githubusercontent.com/u/144227974?v=4
+
+
+revitale:
+  name: Revital Eres
+  title: Software Engineer at,  IBM
+  url: https://github.com/revit13
+  image_url: https://avatars.githubusercontent.com/u/16211463?v=4
+
+sunilarora:
+  name: Sunil Arora
+  title: Software Engineer, Google
+  image_url: https://github.com/droot.png
+  socials:
+    linkedin: https://www.linkedin.com/in/sunilarora101/
+    github: https://github.com/droot
+
+xiahua:
+  name: Xia Hua
+  title: Software Engineer, Google
+  image_url: https://github.com/huaxig.png
+  socials:
+    linkedin: huax
+    github: https://github.com/huaxig
+
+jianyang:
+  name: Jian Yang
+  title: Software Engineer, Google
+  image_url: /img/blogs/jianyang.svg
+
+ryanlee:
+  name: Ryan Lee
+  title: Software Engineer, Google
+  image_url: https://github.com/ryannova.png
+  socials:
+    github: https://github.com/ryannova
+
+keelinmcdonell:
+  name: Keelin McDonell
+  title: Product Manager, Google
+  image_url: https://avatars.githubusercontent.com/u/1154024?v=4
+  socials:
+    github: https://github.com/keelinmcdonell
+
+anishshah:
+  name: Anish Shah
+  title: Software Engineer, Google
+  image_url: https://avatars.githubusercontent.com/u/3175743?v=4
+  socials:
+    github: https://github.com/AnishShah
+
+joeywang:
+  name: Joey Wang
+  title: Software Engineer, Google
+  image_url: https://avatars.githubusercontent.com/u/257918665?v=4
+  socials:
+    github: https://github.com/joeywan-google
+
+syedaanjum:
+  name: Syeda Anjum
+  title: Cloud Solution Architect, Google
+  image_url: https://avatars.githubusercontent.com/u/104458278?v=4
+  socials:
+    github: https://github.com/syeda-anjum
+
+gopalasurya:
+  name: Gopala Suryanarayana
+  title: Product Manager, Google
+  image_url: https://avatars.githubusercontent.com/u/47865694?v=4
+  socials:
+    linkedin: https://www.linkedin.com/in/gopalasurya/
+    github: https://github.com/gopalasuryaa
+
+newtonjain:
+  name: Newton Jain
+  title: Product Manager, Google
+  image_url: https://avatars.githubusercontent.com/u/7623829?v=4
+  socials:
+    github: https://github.com/newtonjain
+
+christopherpirillo:
+  name: Christopher Pirillo
+  title: Staff Software Engineer, Google
+  image_url: https://avatars.githubusercontent.com/u/9355389?v=4
+  socials:
+    github: https://github.com/Chris113113
+
+inferact:
+  name: Inferact Team
+  image_url: /img/authors/inferact.png
+  socials:
+    github: https://github.com/Inferact
+    website: https://inferact.ai/
+
+radixark:
+  name: RadixArk Team
+  image_url: https://avatars.githubusercontent.com/u/223053390?v=4
+  socials:
+    github: https://github.com/radixark
+    website: https://www.radixark.com/

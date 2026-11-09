@@ -103,3 +103,107 @@ batch-inference:
   label: Batch Inference
   permalink: /batch-inference
   description: Batch inference processing for LLM workloads
+
+agentic-inference:
+  label: Agentic Inference
+  permalink: /agentic-inference
+  description: Inference serving and optimization for agentic workloads
+
+glm-5-2:
+  label: GLM-5.2
+  permalink: /glm-5-2
+  description: Serving and optimization for GLM-5.2
+
+speculative-decoding:
+  label: Speculative Decoding
+  permalink: /speculative-decoding
+  description: Speculative decoding and multi-token prediction for LLM inference
+
+hma:
+  label: HMA
+  permalink: /hma
+  description: Hybrid Memory Allocator and serving hybrid models
+
+networking:
+  label: Networking
+  permalink: /networking
+  description: Networking, transports, and KV Cache transfers for distributed inference
+
+nixl:
+  label: NIXL
+  permalink: /nixl
+  description: NVIDIA Inference Xfer Library (NIXL) backends and integration
+
+uccl:
+  label: UCCL
+  permalink: /uccl
+  description: Unified Collective Communication Library (UCCL) backend
+
+ucx:
+  label: UCX
+  permalink: /ucx
+  description: Unified Communication X (UCX) backend
+
+multimodal:
+  label: Multimodal
+  permalink: /multimodal
+  description: Multimodal model serving and optimization
+
+heterogeneous:
+  label: Heterogeneous
+  permalink: /heterogeneous
+  description: Heterogeneous inference hardware and serving
+
+disaggregation:
+  label: Disaggregation
+  permalink: /disaggregation
+  description: Disaggregated inference serving
+
+vlm:
+  label: VLM
+  permalink: /vlm
+  description: Vision-language model serving and optimization
+
+sglang:
+  label: SGLang
+  permalink: /sglang
+  description: SGLang inference engine integration and performance
+
+observability:
+  label: Observability
+  permalink: /observability
+  description: Metrics, tracing, and observability for llm-d deployments
+
+evaluation:
+  label: Evaluation
+  permalink: /evaluation
+  description: Evaluating llm-d deployments and configurations
+
+benchmarking:
+  label: Benchmarking
+  permalink: /benchmarking
+  description: Benchmark tooling, workloads, and performance results
+
+configuration:
+  label: Configuration
+  permalink: /configuration
+  description: Configuring llm-d deployments and the inference scheduler
+
+skills:
+  label: Skills
+  permalink: /skills
+  description: Code assistant skills for llm-d workflows
+
+code-assistants:
+  label: Code Assistants
+  permalink: /code-assistants
+  description: AI code assistants and AI-assisted development workflows
+
+vllm:
+  label: vLLM
+  permalink: /vllm
+  description: vLLM inference engine integration and performance
+rl:
+  label: RL
+  permalink: /rl
+  description: Reinforcement learning and post-training on llm-d

@@ -1,345 +1,188 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- * https://infima.dev/
- * 
- * Colour Generation for :root
- * https://docusaurus.io/docs/styling-layout
+ * llm-d theme — clean Infima overrides.
+ * Brand color: llm-d purple (#7F317F). Typeface: IBM Plex Sans.
  */
-
-/* You can override the default Infima variables here. */
-
-@font-face {
-  font-family: "Red Hat Mono";
-  src: url(fonts/RedHatMono-VariableFont_wght.ttf);
-}
-
-@font-face {
-  font-family: "Red Hat Display";
-  src: url(fonts/RedHatDisplay-VariableFont_wght.ttf);
-}
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-sans/700.css';
 
 :root {
   --ifm-color-primary: #7f317f;
-  --ifm-color-primary-dark: #722c72;
-  --ifm-color-primary-darker: #6c2a6c;
-  --ifm-color-primary-darkest: #592259;
-  --ifm-color-primary-light: #8c368c;
-  --ifm-color-primary-lighter: #923892;
-  --ifm-color-primary-lightest: #a540a5;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: "Red Hat Display", Arial, Helvetica, sans-serif;
-  --ifm-font-family-monospace: "Red Hat Mono", "Courier New", monospace;
-  /* Light mode code block styling for better contrast */
-  --ifm-pre-background: #f6f8fa;
-  --ifm-pre-color: #24292f;
-  --ifm-code-background: #f6f8fa;
-  background-color: white;
+  --ifm-color-primary-dark: #6b2a6b;
+  --ifm-color-primary-darker: #5e245e;
+  --ifm-color-primary-darkest: #4a1c4a;
+  --ifm-color-primary-light: #933893;
+  --ifm-color-primary-lighter: #a044a0;
+  --ifm-color-primary-lightest: #ca77ca;
+
+  --ifm-font-family-base: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+  --ifm-heading-font-weight: 600;
+  --ifm-code-font-size: 92%;
+  --ifm-navbar-shadow: 0 1px 0 0 var(--ifm-color-emphasis-200);
+  --docusaurus-highlighted-code-line-bg: rgba(127, 49, 127, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  --ifm-color-primary: #d494d4;
-  --ifm-color-primary-dark: #ca7aca;
-  --ifm-color-primary-darker: #c56dc5;
-  --ifm-color-primary-darkest: #b448b4;
-  --ifm-color-primary-light: #deaede;
-  --ifm-color-primary-lighter: #e3bbe3;
-  --ifm-color-primary-lightest: #f3e1f3;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  background-color: #262626;
+[data-theme='dark'] {
+  /* Dark-mode accent (per design): #CA77CA. */
+  --ifm-color-primary: #ca77ca;
+  --ifm-color-primary-dark: #bf66bf;
+  --ifm-color-primary-darker: #b95bb9;
+  --ifm-color-primary-darkest: #a23fa2;
+  --ifm-color-primary-light: #d396d3;
+  --ifm-color-primary-lighter: #d9a1d9;
+  --ifm-color-primary-lightest: #e7c4e7;
+
+  --ifm-background-color: #16121a;
+  --ifm-background-surface-color: #1d1822;
+  --docusaurus-highlighted-code-line-bg: rgba(201, 126, 201, 0.15);
 }
 
-.hidden {
-display: none !important;
+/* Slightly tighter, calmer navbar */
+.navbar {
+  --ifm-navbar-item-padding-horizontal: 0.85rem;
 }
 
-.github {
-  background-image: url("@site/static/img/new-social/github-mark.png");
-}
-
-[data-theme="dark"] .github {
-  background-image: url("@site/static/img/new-social/github-mark-white.png");
-}
-
-/* Footer social links */
-.footer-socials {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-socials-row {
-  display: grid;
-  grid-template-columns: repeat(7, 26px);
-  gap: 10px;
-  align-items: center;
-  justify-content: start;
-}
-
-/* Responsive layout for smaller footer widths */
-@media screen and (max-width: 996px) {
-  .footer-socials-row {
-    grid-template-columns: repeat(4, 28px);
-    gap: 12px;
-    justify-content: start;
-  }
-  
-  .footer-socials img {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-.footer-socials-cta {
-  margin-top: 4px;
-}
-
-.footer-socials a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-}
-
-.footer-socials img {
-  width: 26px;
-  height: 26px;
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.footer-socials img:hover {
-  transform: scale(1.1);
-}
-
-/* Navbar GitHub icon */
-.navbar .github {
-  width: 28px;
-  height: 28px;
-  display: inline-block;
-  background-size: cover;
-  background-position: center;
-}
-
-.navbar .github:hover {
-  transform: scale(1.05);
-}
-
-/* Tighten spacing for right-side navbar items */
-.navbar-github-stars,
-.navbar-slack-item {
-  padding: 0 !important;
-  margin: 0 2px !important;
-}
-
-/* Make GitHub stars iframe fit tightly */
-.navbar-github-stars {
-  display: flex !important;
-  align-items: center;
-}
-
-.navbar-github-stars iframe {
-  width: 150px !important;
-}
-
-/* Navbar Slack button */
-.navbar-slack-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  background-color: transparent;
-  color: var(--ifm-navbar-link-color);
-  text-decoration: none;
-  border-radius: 6px;
-  font-family: var(--ifm-font-family-base);
-  font-size: 1rem;
-  font-weight: var(--ifm-font-weight-semibold);
-  vertical-align: middle;
-  margin-left: 0;
-  transition: background-color 0.2s ease;
-}
-
-.navbar-slack-button:hover {
-  background-color: #f0f0f0;
-  color: var(--ifm-navbar-link-hover-color);
-  text-decoration: none;
-}
-
-[data-theme="dark"] .navbar-slack-button:hover {
-  background-color: #3a3a3a;
-}
-
-/* Hide GitHub stars in top navbar below 1105px (they appear in hamburger menu instead) */
-@media screen and (max-width: 1105px) {
-  .navbar__inner .navbar-github-stars {
-    display: none !important;
-  }
-}
-
-/* Style GitHub stars in mobile sidebar */
-.navbar-sidebar .navbar-github-stars {
-  display: flex !important;
-  padding: 8px 16px;
-  margin-bottom: 8px;
-}
-
-.navbar-sidebar .navbar-github-stars iframe {
-  width: 150px !important;
-}
-
-.header {
-  display: flex;
-  align-content: center;
-  @media screen and (max-width: 1440px) {
-    font-size: 2.5rem;
-  }
-}
-
-* em b {
-  box-sizing: border-box;
+/* Announcement bar — solid brand purple with clear text */
+div[class*='announcementBar_'] {
+  background-color: #7f317f;
+  background-image: none;
+  color: #fff;
   font-weight: 500;
-  font-size: 1.1rem;
-  @media screen and (max-width: 768px) {
-    font-size: 1rem !important;
-  }
+  border-bottom: none;
 }
-
-.viewport {
-  width: 100vw;
-  height: 100vh;
-  max-width: 100%;
-  @media screen and (max-width: 1024px) and (orientation: landscape) {
-    height: auto;
-  }
+div[class*='announcementBar_'] a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
-
-.about-viewport {
-  width: 100vw;
-  height: 100vh;
-  max-width: 100%;
-  @media screen and (max-width: 1024px) and (orientation: landscape) {
-    height: auto;
-  }
+div[class*='announcementBar_'] a:hover {
+  color: #fff;
+  opacity: 0.85;
 }
-
-.welcome-viewport {
-  color: black;
-  width: 100vw;
-  height: 100vh;
-  max-width: 100%;
-  @media screen and (max-width: 1024px) and (orientation: landscape) {
-    height: auto;
-  }
-}
-
-.welcome,
-.install,
-.demo,
-.about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0%;
-  font-size: larger;
-}
-
-/* ----------------------------- Welcome Section ---------------------------- */
-
-.welcome {
-  background-image: url("@site/static/img/background.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.welcome-info,
-.install-gif {
-  display: block;
-}
-
-img.llm-d-logo {
-  display: inline-block;
-  padding-bottom: 10%;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
-}
-
-.welcome-info {
-  display: block;
-  text-align: center;
-  padding: 5% 10%;
-  margin: 20%;
-  background-color: rgba(255, 255, 255);
-  border-radius: 40px;
-  @media screen and (max-width: 1024px) and (orientation: landscape) {
-    margin: 10%;
-  }
-}
-
-[data-theme="dark"] .welcome-info {
-  background-color: rgba(38, 38, 38);
+div[class*='announcementBar_'] button[class*='closeButton'] {
   color: #fff;
 }
 
-.welcome-h1 {
-  display: inline;
-  font-weight: 500;
+/* GitHub icon in the navbar (standard Docusaurus pattern) */
+.header-github-link::before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  display: flex;
+  background: no-repeat center/contain
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+}
+[data-theme='dark'] .header-github-link::before {
+  filter: invert(1);
+}
+.header-github-link:hover {
+  opacity: 0.75;
 }
 
-.welcome-h2 {
-  font-weight: 500;
-  @media screen and (max-width: 768px) {
-    padding: 0%;
-    font-size: 1rem;
-  }
+/* GitHub link with live star count (custom-githubStars navbar item) */
+.header-github-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
-
-.hidden-for-mobile {
+.header-github-stars__icon {
+  content: '';
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
   display: block;
-  padding-top: 5%;
-  @media screen and (max-width: 768px) {
+  background: no-repeat center/contain
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+}
+[data-theme='dark'] .header-github-stars__icon {
+  filter: invert(1);
+}
+.header-github-stars__count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.header-github-stars__count::before {
+  content: '★';
+  margin-right: 0.2rem;
+  color: #e3b341;
+}
+.header-github-stars:hover {
+  opacity: 0.75;
+}
+
+.header-slack-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  /* Match the GitHub star-count text size (.header-github-stars__count). */
+  font-size: 0.85rem;
+}
+/* Drop the auto-appended external-link icon on the Slack link. */
+.header-slack-link svg {
+  display: none;
+}
+.header-slack-link::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 21px;
+  height: 21px;
+  display: flex;
+  background: no-repeat center/contain
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z'/%3E%3C/svg%3E");
+}
+[data-theme='dark'] .header-slack-link::before {
+  filter: invert(1);
+}
+.header-slack-link:hover {
+  opacity: 0.75;
+}
+
+/* Mobile top navbar: show only the GitHub + Slack icons, hide their text.
+   Scoped to the top bar's right items (.navbar__items--right) so the hamburger
+   drawer — which lives under .navbar-sidebar — keeps the star count and the
+   "Join Slack" label as-is. The Slack label is hidden with font-size:0 (its
+   ::before icon has a fixed 21px box, so the icon still shows). */
+@media (max-width: 996px) {
+  .navbar__items--right .header-github-stars__count {
     display: none;
   }
+  .navbar__items--right .header-slack-link {
+    font-size: 0;
+  }
 }
 
-.button-group {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 0 1rem;
+/* Footer follows the color scheme (white in light mode, black in dark mode)
+   instead of Infima's always-dark `--footer--dark` styling. */
+.footer--dark {
+  --ifm-footer-background-color: #ffffff !important;
+  --ifm-footer-color: #000000 !important;
+  --ifm-footer-link-color: #000000 !important;
+  --ifm-footer-title-color: #000000 !important;
+  border-top: 1px solid #000000;
+}
+[data-theme='dark'] .footer--dark {
+  --ifm-footer-background-color: #000000 !important;
+  --ifm-footer-color: #ffffff !important;
+  --ifm-footer-link-color: #ffffff !important;
+  --ifm-footer-title-color: #ffffff !important;
+  border-top: 1px solid #ffffff;
 }
 
-.static-button,
-.install-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  border: 1px solid transparent;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: inherit;
-  background-color: #7f317f;
-  cursor: pointer;
-  transition: border-color 0.25s, background-color 0.25s;
-  text-decoration: none;
-  color: #fff;
-  min-width: 160px;
-  white-space: nowrap;
-  flex: 0 1 auto;
-}
-
-.static-button:hover {
-  background-color: #a540a5;
-  transition: 250ms;
+/* All footer text at 14px — column titles, link items, copyright, CNCF
+   mention, Slack CTA label. */
+.footer,
+.footer__title,
+.footer__link-item,
+.footer__items,
+.footer__copyright,
+.footer-socials,
+.footer-cncf,
+.footer-socials-cta {
+  font-size: 0.875rem;
 }
 
 .button-link,
@@ -348,324 +191,265 @@ img.llm-d-logo {
   color: #fff;
 }
 
-/* ----------------------------- Install Section ---------------------------- */
-
-.install-header {
-  display: flex;
-}
-
-.install-info {
+/* Footer social links (Social column's `html` link block) */
+.footer-socials {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  padding: 20%;
-  @media screen and (max-width: 1024px) and (orientation: landscape) {
-    padding: 10%;
-  }
+  gap: 12px;
 }
-
-.install-h1 {
-  font-size: 300%;
-  @media screen and (max-width: 1024px) {
-    font-size: 150%;
-  }
-}
-
-.install-h2 {
-  font-weight: 600;
-  font-size: 200%;
-  @media screen and (max-width: 1024px) {
-    font-size: 100%;
-  }
-}
-
-.install-h3 {
-  font-weight: 500;
-  font-size: 150%;
-  @media screen and (max-width: 1024px) {
-    font-size: 75%;
-    margin: 0;
-  }
-}
-
-.install-h1,
-.install-h2,
-.install-h3 {
-  text-align: center;
-}
-
-.install-code {
-  font-family: "Red Hat Mono", monospace !important;
-  font-weight: 500;
-  padding: 1rem;
-  background-color: #262626;
-  border-radius: 15px;
-  width: 100%;
-}
-
-.install-code p {
-  display: inline-flex;
-}
-
-.install-logo {
-  margin-left: 2%;
-  padding-bottom: 2.5%;
-  @media screen and (max-width: 1024px) {
-    display: none;
-  }
-}
-
-/* ------------------------------ Demo Section ------------------------------ */
-
-.demo-h1 {
-  text-align: center;
-  font-size: xx-large;
-}
-
-.demo-gif {
-  display: flex;
-  align-self: center;
-  justify-self: center;
-  width: 100%;
-}
-
-/* ------------------------------ About Section ----------------------------- */
-
-.demo,
-.about {
-  padding: 10%;
-}
-
-.about {
-  @media screen and (max-width: 1024px) {
-    padding: 15% 10%;
-    @media screen and (max-width: 500px) {
-      padding: 30% 10%;
-    }
-  }
-}
-
-.about-header {
-  display: flex;
-  align-content: center;
-  @media screen and (max-width: 1440px) {
-    font-size: 2.5rem;
-  }
-}
-
-.about-grid {
+.footer-socials-row {
   display: grid;
-  grid-template-areas:
-    "graphic-1 graphic-2 graphic-3 graphic-4"
-    "text-1 text-2 text-3 text-4";
+  grid-template-columns: repeat(7, 26px);
+  gap: 10px;
   align-items: center;
-  align-content: stretch;
-  justify-items: center;
-  justify-content: stretch;
-  text-align: center;
-  gap: 2em;
+  justify-content: start;
+}
+@media screen and (max-width: 996px) {
+  .footer-socials-row {
+    grid-template-columns: repeat(4, 28px);
+    gap: 12px;
+    justify-content: start;
+  }
+  .footer-socials img {
+    width: 28px;
+    height: 28px;
+  }
+}
+.footer-socials-cta {
+  margin-top: 4px;
+}
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.footer-socials img {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.footer-socials img:hover {
+  transform: scale(1.1);
+}
+/* Footer background is white in light mode; make the white icon PNGs visible. */
+html:not([data-theme='dark']) .footer-socials img {
+  filter: brightness(0);
+}
+
+/* CNCF Sandbox mention shown in the Social footer column */
+.footer-cncf {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 12px;
+  font-size: 0.875rem;
+}
+.footer-cncf-logo {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: brightness(0);
+}
+[data-theme='dark'] .footer-cncf-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* ---------------------------------------------------------------------------
+   Intro classes used by docs/getting-started (the source README.mdx).
+   --------------------------------------------------------------------------- */
+.intro-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+.intro-ctas a {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--ifm-color-primary);
+}
+.intro-ctas a:first-child {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+.intro-ctas a:first-child:hover {
+  background: var(--ifm-color-primary-dark);
+}
+.intro-ctas a:not(:first-child) {
+  color: var(--ifm-color-primary);
+}
+.intro-ctas a:not(:first-child):hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.intro-founded {
+  margin: 2rem 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+.intro-cncf {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+}
+.intro-cncf-logo {
+  height: 30px;
+  width: auto;
+}
+/* Founder logos sit on their own row under the CNCF line */
+.intro-founded-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem;
+}
+/* The source logos are white silhouettes — tint them dark for light mode,
+   keep them white for dark mode, so they're visible in both. */
+.intro-founder-logo,
+.intro-cncf-logo {
+  filter: brightness(0);
+  opacity: 0.75;
+}
+[data-theme='dark'] .intro-founder-logo,
+[data-theme='dark'] .intro-cncf-logo {
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
+/* ---------------------------------------------------------------------------
+   Docs & community left nav.
+
+   A roomier, clearly-sectioned sidebar: bold section headers, medium-grey leaf
+   links, and a full-width active row (light band + brand-purple text). Scoped to
+   `.theme-doc-sidebar-menu`, so it styles every docs version and the community
+   sidebar at once and never touches the mobile navbar drawer. */
+.theme-doc-sidebar-menu {
+  --ifm-menu-color: #393939;                     /* leaf link text (near-black, not grey) */
+  --ifm-menu-color-active: #7f317f;              /* active row text (brand purple) */
+  --ifm-menu-color-background-active: #f2f4f8;   /* active row band */
+  --ifm-menu-color-background-hover: #f2f4f8;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+}
+.theme-doc-sidebar-menu .menu__link {
+  border-radius: 0; /* full-width band with square edges */
+  padding: 0.5rem 1rem;
+  line-height: 1.35;
+  font-weight: 400; /* leaf links: regular (thinner) */
+}
+.theme-doc-sidebar-menu .menu__list-item:not(:first-child) {
+  margin-top: 0.15rem;
+}
+/* Section headers (collapsible categories): semibold + near-black. */
+.theme-doc-sidebar-menu .menu__link--sublist:not(.menu__link--active) {
+  font-weight: 600;
+  color: #161616;
+}
+/* Active row: semibold. */
+.theme-doc-sidebar-menu .menu__link--active {
+  font-weight: 600;
+}
+
+[data-theme='dark'] .theme-doc-sidebar-menu {
+  --ifm-menu-color: #c6c6c6;
+  --ifm-menu-color-active: #d68bd6;
+  --ifm-menu-color-background-active: #2a2a2a;
+  --ifm-menu-color-background-hover: #2a2a2a;
+}
+[data-theme='dark'] .theme-doc-sidebar-menu .menu__link--sublist:not(.menu__link--active) {
+  color: #f4f4f4;
+}
+
+/* Keep full author titles visible without letting cards grow unbounded. */
+small[class*='authorTitle_'] {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
+
+/* Blog layout: Infima's grid gives every column a fixed flex-basis (col--N),
+   so on a post with no right-hand table of contents the article column
+   still stops at its 7/12 (or 9/12 without a sidebar) width, leaving a dead
+   blank strip on the right where the TOC would otherwise sit. Let the
+   article column grow into that leftover space instead, capping prose at a
+   readable width and centering it so the extra room becomes balanced side
+   margins rather than empty space stuck on one edge. */
+.blog-wrapper .row:not(:has(> .col--2)) > main[class*='col--'] {
+  flex: 1 1 0%;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Infima caps `.container` at 1320px past 1440px viewports, which on a wide
+   monitor leaves large equal margins outside the whole sidebar/article/TOC
+   block. Let the blog container use more of the available width instead. */
+@media (min-width: 1440px) {
+  .blog-wrapper .container {
+    max-width: 1600px;
+  }
+}
+@media (min-width: 1920px) {
+  .blog-wrapper .container {
+    max-width: 1800px;
+  }
+}
+
+/* GLM-5.2 blog figures: size by information density, not source aspect ratio. */
+.glm-figure {
+  width: 94%;
+  max-width: 62.5rem;
+  margin: 1.75rem auto;
+}
+
+.glm-figure--wide {
+  width: 100%;
+  max-width: 72.5rem;
+}
+
+.glm-figure--compact {
+  width: 82%;
+  max-width: 51.25rem;
+}
+
+.glm-figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  max-height: 40rem;
+  margin: 0 auto;
+  object-fit: contain;
+}
 
-  @media screen and (max-width: 1024px) {
-    grid-template-areas:
-      "graphic-1 graphic-2"
-      "text-1 text-2"
-      "graphic-3 graphic-4"
-      "text-3 text-4";
-    gap: 1em;
+.glm-figure figcaption {
+  direction: ltr;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: left;
+}
 
-    @media screen and (max-width: 500px) {
-      grid-template-areas:
-        "graphic-1"
-        "text-1"
-        "graphic-2"
-        "text-2"
-        "graphic-3"
-        "text-3"
-        "graphic-4"
-        "text-4";
-    }
+.glm-figure figcaption > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .glm-figure,
+  .glm-figure--wide,
+  .glm-figure--compact {
+    width: 100%;
+    margin: 1.25rem auto;
   }
-}
-
-.about-grid > * {
-  justify-self: center;
-  align-self: center;
-  height: auto;
-}
-
-.about-graphic-1 {
-  grid-area: graphic-1;
-}
-
-.about-graphic-2 {
-  grid-area: graphic-2;
-}
-
-.about-graphic-3 {
-  grid-area: graphic-3;
-}
-
-.about-graphic-4 {
-  grid-area: graphic-4;
-}
-
-.about-text-1 {
-  grid-area: text-1;
-}
-
-.about-text-2 {
-  grid-area: text-2;
-}
-
-.about-text-3 {
-  grid-area: text-3;
-}
-
-.about-text-4 {
-  grid-area: text-4;
-}
-
-.about-graphic-1,
-.about-graphic-2,
-.about-graphic-3,
-.about-graphic-4 {
-  width: 18vw;
-  margin-top: 1vh;
-  @media screen and (max-width: 1024px) {
-    width: 25vw;
-    @media screen and (max-width: 500px) {
-      width: 75vw;
-    }
-  }
-}
-
-.about-text-1,
-.about-text-2,
-.about-text-3,
-.about-text-4 {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-.install-button {
-  min-width: 160px;
-  max-width: 280px;
-}
-
-/* ul li {
-  list-style: none;
-  padding: 0;
-} */
-
-.ul-bulleted {
-  list-style-type: disc;
-  padding: 0;
-}
-
-.footer--dark {
-  --ifm-footer-background-color: #262626 !important;
-}
-
-/* ----------------------------- Announcement Bar ---------------------------- */
-
-/* Override Docusaurus fixed height on desktop */
-@media (min-width: 997px) {
-  :root {
-    --docusaurus-announcement-bar-height: auto !important;
-  }
-}
-
-/* Main announcement bar container - allow height to grow */
-.theme-announcement-bar {
-  height: auto !important;
-  min-height: 30px;
-  padding: 8px 16px;
-}
-
-/* Content styling - allow wrapping */
-[class*="announcementBarContent"] {
-  white-space: normal !important;
-}
-
-/* Improved YAML syntax highlighting site-wide */
-/* Fix YAML code blocks to avoid red/green diff-like appearance */
-
-/* Light mode YAML colors */
-.language-yaml .prism-code .token.string {
-  color: #032f62 !important; /* Dark blue instead of red */
-}
-
-.language-yaml .prism-code .token.comment {
-  color: #6a737d !important; /* Muted gray instead of bright green */
-}
-
-.language-yaml .prism-code .token.key.atrule {
-  color: #005cc5 !important; /* Professional blue for YAML keys */
-}
-
-.language-yaml .prism-code .token.number {
-  color: #005cc5 !important; /* Consistent blue for numbers */
-}
-
-.language-yaml .prism-code .token.boolean {
-  color: #005cc5 !important; /* Consistent blue for booleans */
-}
-
-/* Dark mode YAML colors */
-[data-theme="dark"] .language-yaml .prism-code .token.string {
-  color: #9ecbff !important; /* Light blue instead of red */
-}
-
-[data-theme="dark"] .language-yaml .prism-code .token.comment {
-  color: #8b949e !important; /* Muted gray instead of bright green */
-}
-
-[data-theme="dark"] .language-yaml .prism-code .token.key.atrule {
-  color: #79c0ff !important; /* Light blue for keys */
-}
-
-[data-theme="dark"] .language-yaml .prism-code .token.number {
-  color: #79c0ff !important; /* Consistent light blue */
-}
-
-[data-theme="dark"] .language-yaml .prism-code .token.boolean {
-  color: #79c0ff !important; /* Consistent light blue */
-}
-
-/* Improve light mode code block visibility with border and shadow - LIGHT MODE ONLY */
-html:not([data-theme="dark"]) pre {
-  border: 1px solid #d0d7de;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-/* Override Prism inline styles for better contrast - LIGHT MODE ONLY */
-html:not([data-theme="dark"]) .prism-code {
-  background-color: #f6f8fa !important;
-}
-
-html:not([data-theme="dark"]) .codeBlockContainer_Ckt0 {
-  --prism-background-color: #f6f8fa !important;
-}
-
-html:not([data-theme="dark"]) pre.prism-code {
-  background-color: #f6f8fa !important;
-}
-
-/* Dark mode code block text - use original blue color from vsDark theme */
-[data-theme="dark"] .prism-code {
-  --prism-color: #9CDCFE !important;
-}
-
-[data-theme="dark"] pre.prism-code {
-  color: #9CDCFE !important;
-}
-
-[data-theme="dark"] .token-line {
-  color: #9CDCFE !important;
-}
-
-[data-theme="dark"] .token.plain {
-  color: #9CDCFE !important;
 }
